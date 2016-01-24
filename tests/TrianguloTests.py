@@ -1,6 +1,7 @@
 import unittest
 
 from triangulo.Triangulo import Triangulo
+from triangulo.TrianguloEnums import TrianguloEnum
 
 
 class TrianguloTestCases(unittest.TestCase):
@@ -60,6 +61,29 @@ class TrianguloTestCases(unittest.TestCase):
             self):
         self.assertEqual(self.triangulo.is_triangulo_isosceles(6, 6, 6),
                          False)
+
+    def test_determinar_tipo_espera_nao_forma_triangulo_quando_valores_sao_invalidos(self):
+        self.assertEqual(self.triangulo.determinar_tipo(5, 7, 2),
+                         [TrianguloEnum.NAO_FORMA_TRIANGULO])
+
+    def test_determinar_tipo_espera_triangulo_acutangulo_e_isosceles(self):
+        self.assertEqual(self.triangulo.determinar_tipo(7, 5, 7),
+                         [TrianguloEnum.TRIANGULO_ACUTANGULO,
+                          TrianguloEnum.TRIANGULO_ISOSCELES])
+
+    def test_determinar_tipo_espera_triangulo_obtusangulo_e_isosceles(self):
+        self.assertEqual(self.triangulo.determinar_tipo(6, 6, 10),
+                         [TrianguloEnum.TRIANGULO_OBTUSANGULO,
+                          TrianguloEnum.TRIANGULO_ISOSCELES])
+
+    def test_determinar_tipo_espera_triangulo_acutangulo_e_equilatero(self):
+        self.assertEqual(self.triangulo.determinar_tipo(6, 6, 6),
+                         [TrianguloEnum.TRIANGULO_ACUTANGULO,
+                          TrianguloEnum.TRIANGULO_EQUILATERO])
+
+    def test_determinar_tipo_espera_triangulo_retangulo(self):
+        self.assertEqual(self.triangulo.determinar_tipo(6, 8, 10),
+                         [TrianguloEnum.TRIANGULO_RETANGULO])
 
 
 if __name__ == '__main__':
