@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-from TrianguloEnums import TrianguloEnum
+from triangulo.TrianguloEnums import TrianguloEnum
 
 
 class Triangulo(object):
