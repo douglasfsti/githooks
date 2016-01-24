@@ -32,4 +32,9 @@ class Triangulo(object):
 
     Imprima todas as classificações do triângulo especificado na entrada.
     """
-    pass
+
+    def valores_sao_maiores_que_zero(self, a, b, c):
+        return a > 0 and b > 0 and c > 0
+
+    def is_triangulo(self, a, b, c):
+        return self.valores_sao_maiores_que_zero(a, b, c) and b + c >= a
