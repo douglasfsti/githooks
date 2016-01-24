@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+from TrianguloEnums import TrianguloEnum
+
 
 class Triangulo(object):
     """
@@ -39,8 +41,14 @@ class Triangulo(object):
     def __possui_apenas_dois_lados_iguais(self, a, b, c):
         return a == b or a == c or b == c
 
+    def __devolve_lista_ordem_decrescente(self, a, b, c):
+        ordem_decrescente = [a, b, c]
+        ordem_decrescente.sort()
+        ordem_decrescente.reverse()
+        return ordem_decrescente
+
     def is_triangulo(self, a, b, c):
-        return self.__valores_sao_maiores_que_zero(a, b, c) and b + c >= a
+        return self.__valores_sao_maiores_que_zero(a, b, c) and a < b + c
 
     def is_triangulo_retangulo(self, a, b, c):
         return self.is_triangulo(a, b, c) and b ** 2 + c ** 2 == a ** 2
@@ -58,3 +66,27 @@ class Triangulo(object):
         return (self.is_triangulo(a, b, c) and
                 not self.is_triangulo_equilatero(a, b, c) and
                 self.__possui_apenas_dois_lados_iguais(a, b, c))
+
+    def determinar_tipo(self, a, b, c):
+        tipos_de_triangulos = []
+        a, b, c = self.__devolve_lista_ordem_decrescente(a, b, c)
+
+        if self.is_triangulo(a, b, c):
+            if self.is_triangulo_retangulo(a, b, c):
+                tipos_de_triangulos.append(TrianguloEnum.TRIANGULO_RETANGULO)
+
+            if self.is_triangulo_obtusangulo(a, b, c):
+                tipos_de_triangulos.append(TrianguloEnum.TRIANGULO_OBTUSANGULO)
+
+            if self.is_triangulo_acutangulo(a, b, c):
+                tipos_de_triangulos.append(TrianguloEnum.TRIANGULO_ACUTANGULO)
+
+            if self.is_triangulo_equilatero(a, b, c):
+                tipos_de_triangulos.append(TrianguloEnum.TRIANGULO_EQUILATERO)
+
+            if self.is_triangulo_isosceles(a, b, c):
+                tipos_de_triangulos.append(TrianguloEnum.TRIANGULO_ISOSCELES)
+        else:
+            tipos_de_triangulos.append(TrianguloEnum.NAO_FORMA_TRIANGULO)
+
+        return tipos_de_triangulos
