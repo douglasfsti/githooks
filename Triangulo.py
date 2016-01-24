@@ -47,3 +47,6 @@ class Triangulo(object):
 
     def is_triangulo_acutangulo(self, a, b, c):
         return self.is_triangulo(a, b, c) and a ** 2 < b ** 2 + c ** 2
+
+    def is_triangulo_equilatero(self, a, b, c):
+        return self.is_triangulo(a, b, c) and a == b == c
