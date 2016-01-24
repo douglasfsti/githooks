@@ -1,4 +1,4 @@
-from Triangulo import Triangulo
+from triangulo.Triangulo import Triangulo
 
 
 if __name__ == "__main__":
