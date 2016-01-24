@@ -8,11 +8,15 @@ python:
 
 # command to install dependencies
 install:
+    - pip install coverage coveralls
     - pip install -r requirements.txt
 
 # command to run tests
-script: nosetests tests/*
+script: nosetests --with-coverage tests/*
 
 branches:
     only:
         - python-code
+
+after_success:
+    coveralls
