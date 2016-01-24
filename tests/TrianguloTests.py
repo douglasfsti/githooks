@@ -1,6 +1,6 @@
 import unittest
 
-from Triangulo import Triangulo
+from triangulo.Triangulo import Triangulo
 
 
 class TrianguloTestCases(unittest.TestCase):
