@@ -23,6 +23,14 @@ class TrianguloTestCases(unittest.TestCase):
     def test_is_triangulo_retangulo_espera_true_a2_diferente_b2_mais_c2(self):
         self.assertEqual(self.triangulo.is_triangulo_retangulo(1, 1, 2), False)
 
+    def test_is_triangulo_obtusangulo_espera_true_a2_maior_b2_mais_c2(self):
+        self.assertEqual(self.triangulo.is_triangulo_obtusangulo(10, 6, 6),
+                         True)
+
+    def test_is_triangulo_obtusangulo_espera_false_a2_menor_b2_mais_c2(self):
+        self.assertEqual(self.triangulo.is_triangulo_obtusangulo(10, 8, 6),
+                         False)
+
 
 if __name__ == '__main__':
     unittest.main()
