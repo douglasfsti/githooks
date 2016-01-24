@@ -46,5 +46,4 @@ class Triangulo(object):
         return self.is_triangulo(a, b, c) and a ** 2 > b ** 2 + c ** 2
 
     def is_triangulo_acutangulo(self, a, b, c):
-        # se A2 < B2 + C2, apresente a mensagem: TRIANGULO ACUTANGULO
         return self.is_triangulo(a, b, c) and a ** 2 < b ** 2 + c ** 2
