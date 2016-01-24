@@ -38,3 +38,6 @@ class Triangulo(object):
 
     def is_triangulo(self, a, b, c):
         return self.valores_sao_maiores_que_zero(a, b, c) and b + c >= a
+
+    def is_triangulo_retangulo(self, a, b, c):
+        return self.is_triangulo(a, b, c) and b ** 2 + c ** 2 == a ** 2

@@ -11,11 +11,17 @@ class TrianguloTestCases(unittest.TestCase):
     def tearDown(self):
         self.triangulo = None
 
-    def test_espera_true_quando_lados_do_triangulo_sao_validos(self):
+    def test_is_triangulo_espera_true_quando_lados_sao_validos(self):
         self.assertEqual(self.triangulo.is_triangulo(10, 8, 6), True)
 
-    def test_espera_false_quando_lados_do_triangulo_sao_invalidos(self):
+    def test_is_triangulo_espera_false_quando_lados_sao_invalidos(self):
         self.assertEqual(self.triangulo.is_triangulo(-1, 0, 42), False)
+
+    def test_is_triangulo_retangulo_espera_true_a2_igual_b2_mais_c2(self):
+        self.assertEqual(self.triangulo.is_triangulo_retangulo(10, 8, 6), True)
+
+    def test_is_triangulo_retangulo_espera_true_a2_diferente_b2_mais_c2(self):
+        self.assertEqual(self.triangulo.is_triangulo_retangulo(1, 1, 2), False)
 
 
 if __name__ == '__main__':
