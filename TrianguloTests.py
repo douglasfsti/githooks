@@ -15,7 +15,7 @@ class TrianguloTestCases(unittest.TestCase):
         self.assertEqual(self.triangulo.is_triangulo(10, 8, 6), True)
 
     def test_is_triangulo_espera_false_quando_lados_sao_invalidos(self):
-        self.assertEqual(self.triangulo.is_triangulo(-1, 0, 42), False)
+        self.assertEqual(self.triangulo.is_triangulo(7, 5, 2), False)
 
     def test_is_triangulo_retangulo_espera_true_quando_a2_igual_b2_mais_c2(
             self):
