@@ -1,6 +1,5 @@
 # Git hooks
-[![Build Status](https://travis-ci.org/douglasfsti/githooks
-.svg?branch=python-code)](https://travis-ci.org/douglasfsti/githooks)
+[![Build Status](https://travis-ci.org/douglasfsti/githooks.svg?branch=python-code)](https://travis-ci.org/douglasfsti/githooks)
 
 ## pre-commit
 https://pythonhosted.org/jig/
