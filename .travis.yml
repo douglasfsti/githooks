@@ -15,5 +15,5 @@ script: nosetests
 
 branches:
     only:
-        - master
+        - python-code
 
