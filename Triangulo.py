@@ -36,6 +36,9 @@ class Triangulo(object):
     def valores_sao_maiores_que_zero(self, a, b, c):
         return a > 0 and b > 0 and c > 0
 
+    def possui_apenas_dois_lados_iguais(self, a, b, c):
+        return a == b or a == c or b == c
+
     def is_triangulo(self, a, b, c):
         return self.valores_sao_maiores_que_zero(a, b, c) and b + c >= a
 
@@ -50,3 +53,8 @@ class Triangulo(object):
 
     def is_triangulo_equilatero(self, a, b, c):
         return self.is_triangulo(a, b, c) and a == b == c
+
+    def is_triangulo_isosceles(self, a, b, c):
+        return (self.is_triangulo(a, b, c) and
+                not self.is_triangulo_equilatero(a, b, c) and
+                self.possui_apenas_dois_lados_iguais(a, b, c))

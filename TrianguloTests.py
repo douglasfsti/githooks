@@ -52,6 +52,15 @@ class TrianguloTestCases(unittest.TestCase):
         self.assertEqual(self.triangulo.is_triangulo_equilatero(15, 6, 6),
                          False)
 
+    def test_is_triangulo_isosceles_espera_true_quando_dois_lados_sao_iguas(
+            self):
+        self.assertEqual(self.triangulo.is_triangulo_isosceles(10, 6, 6), True)
+
+    def test_is_triangulo_isosceles_espera_falsse_quando_todos_lados_sao_iguais(
+            self):
+        self.assertEqual(self.triangulo.is_triangulo_isosceles(6, 6, 6),
+                         False)
+
 
 if __name__ == '__main__':
     unittest.main()
